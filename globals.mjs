@@ -33,5 +33,6 @@ export {
     ADMIN_METHODS,
     GetLogEventsCommand,
     sesClient,
-    SendEmailCommand
+    SendEmailCommand,
+    SERVER_KEY
 };

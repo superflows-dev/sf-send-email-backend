@@ -1,4 +1,5 @@
 import { processSendEmail } from './sendemail.mjs';
+import { processSendEmailWithKey } from './sendemailwithkey.mjs';
 
 export const handler = async (event, context, callback) => {
     
@@ -27,6 +28,12 @@ export const handler = async (event, context, callback) => {
           const resultSendEmail = await processSendEmail(event);
           response.body = JSON.stringify(resultSendEmail.body);
           response.statusCode = resultSendEmail.statusCode;
+        break;
+
+        case "/sendemailwithkey":
+          const resultSendEmailWithKey = await processSendEmailWithKey(event);
+          response.body = JSON.stringify(resultSendEmailWithKey.body);
+          response.statusCode = resultSendEmailWithKey.statusCode;
         break;
         
     }
